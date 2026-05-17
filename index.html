@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marie Generali Lince</title>
     <style>
-        /* --- Styles de base --- */
+        /* --- Base Styles --- */
         body {
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -16,7 +16,7 @@
         a { color: #007bff; text-decoration: none; }
         a:hover { text-decoration: underline; }
         
-        /* --- Mise en page principale --- */
+        /* --- Main Layout --- */
         .container {
             display: flex;
             max-width: 1000px;
@@ -24,7 +24,7 @@
             padding: 0 20px;
         }
         
-        /* --- Barre latérale (Profil) --- */
+        /* --- Sidebar (Profile) --- */
         .sidebar {
             width: 250px;
             padding-right: 40px;
@@ -49,12 +49,12 @@
             padding-top: 15px;
         }
         
-        /* --- Contenu principal --- */
+        /* --- Main Content --- */
         .main-content {
             flex: 1;
         }
         
-        /* --- Menu de navigation --- */
+        /* --- Navigation Menu --- */
         .navbar {
             border-bottom: 1px solid #eee;
             padding-bottom: 10px;
@@ -65,7 +65,7 @@
         .navbar a { font-weight: bold; color: #555; }
         .navbar a:hover, .navbar a.active { color: #000; text-decoration: none; border-bottom: 2px solid #000; padding-bottom: 8px;}
         
-        /* --- Sections de texte --- */
+        /* --- Text Sections --- */
         h1 { border-bottom: 1px solid #eee; padding-bottom: 10px; font-size: 2em; margin-top: 0; }
         h2.section-title { margin-top: 40px; font-size: 1.4em; }
         
@@ -73,7 +73,7 @@
         .item-title { font-weight: bold; }
         .item-desc { color: #555; font-size: 0.95em; }
 
-        /* --- Adaptation pour téléphones --- */
+        /* --- Mobile Adaptation --- */
         @media (max-width: 768px) {
             .container { flex-direction: column; margin-top: 20px; }
             .sidebar { width: 100%; padding-right: 0; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 20px; }
@@ -88,11 +88,11 @@
         <img src="https://via.placeholder.com/160" alt="Marie Generali Lince" class="profile-pic">
         
         <h2>Marie Generali Lince</h2>
-        <p class="title">ENSAE / CREST /INRIA / IPP ici<br></p>
+        <p class="title">ENSAE / CREST / INRIA / IPP<br></p>
         
         <div class="contact-info">
-            ✉️ <a href="marie.generali@polytechnique.edu"> Email </a><br>
-            🔗 <a href="www.linkedin.com/in/marie-generali-888648232"> LinkedIn </a><br>
+            ✉️ <a href="mailto:marie.generali@polytechnique.edu">Email</a><br>
+            🔗 <a href="https://www.linkedin.com/in/marie-generali-888648232">LinkedIn</a><br>
             🎓 <a href="https://scholar.google.com/citations?hl=fr&user=N2TO1ZcAAAAJ">Google Scholar</a>
         </div>
     </div>
@@ -107,14 +107,14 @@
         </div>
 
         <h1>About me</h1>
-        <p> I am a PhD student in Fairplay joint team at Inria Saclay under the supervision of Solenne Gaucher and Patrick Loiseau.
-        My work is about algorithmic fairness. 
+        <p> I am a PhD student in the Fairplay joint team at Inria Saclay under the supervision of Solenne Gaucher and Patrick Loiseau.
+        My work focuses on algorithmic fairness. 
         </p>
         <p></p>
 
         <h2 class="section-title">News</h2>
         <ul>
-            <li><strong></strong> !</li>
+            <li><strong></strong> </li>
             <li><strong></strong> </li>
         </ul>
 
@@ -122,17 +122,16 @@
         
         <div class="item-list">
             <div class="item-title">Geometry of Relaxed Fair Regression: A Unified Framework for Aware and Unaware Settings</div>
-            <div class="item-desc">M. Generali Lince, V. Divol, R. Flamary, S. Gaucher, P. Loiseau. <em>NeurIPS 2026</em>. <a href="neurips_2026.pdf" target="_blank">Voir le PDF</a>.</div>
-            <p>Cet article propose un cadre unifié pour la régression équitable relâchée en utilisant le transport optimal. Il offre des solutions explicites pour les contextes conscients (aware) et non conscients (unaware), ainsi qu'un algorithme de post-traitement performant.</p>
+            <div class="item-desc">M. Generali Lince, V. Divol, R. Flamary, S. Gaucher, P. Loiseau. <em>NeurIPS 2026</em>. <a href="neurips_2026.pdf" target="_blank">View PDF</a>.</div>
+            <p>This paper proposes a unified framework for relaxed fair regression using optimal transport. It provides explicit solutions for both aware and unaware settings, along with an efficient post-processing algorithm.</p>
         </div>
 
         <div class="item-list">
             <div class="item-title">Counterfactually Fair Regression via Optimal Transport</div>
-            <div class="item-desc">M. Generali Lince, S. Gaucher, J.-J. Vie, P. Loiseau. <a href="geometry_relaxed.pdf" target="_blank">Voir le PDF</a>.</div>
-            <p>Ce travail démontre que l'équité contrefactuelle (CF) équivaut à la parité démographique conditionnelle. Il introduit une méthode de post-traitement avec des bornes statistiques précises pour contrôler le compromis entre risque et équité.</p>
+            <div class="item-desc">M. Generali Lince, S. Gaucher, J.-J. Vie, P. Loiseau. <a href="geometry_relaxed.pdf" target="_blank">View PDF</a>.</div>
+            <p>This work demonstrates that counterfactual fairness (CF) is equivalent to conditional demographic parity. It introduces a post-processing method with precise statistical bounds to control the accuracy-fairness trade-off.</p>
         </div>
         
-
     </div>
 </div>
 
