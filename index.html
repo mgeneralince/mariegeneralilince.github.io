@@ -5,8 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marie Generali Lince</title>
 
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
+
     <meta name="google-site-verification" content="google-site-verification=zkO8OA5BCJiMInsT-WVpUfnvGVUvaqP47s-v_7wCSuo" />
     <style>
+        /* --- Import Professional Font --- */
+        /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');*/
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap'); 
+
+        /* --- Base Styles --- */
+        body {
+            margin: 0;
+            /* font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; */
+            font-family: 'Lora', Georgia, 'Times New Roman', serif;
+            color: #2c3e50; /* A softer, darker blue-gray instead of harsh black */
+            background-color: #f4f7f6; /* A very light, clean background color */
+            line-height: 1.7;
+        }
+        /* a { color: #007bff; text-decoration: none; transition: color 0.2s ease-in-out; }
+        a:hover { color: #0056b3; text-decoration: underline; } */
+        a { color: #4f46e5; text-decoration: none; transition: color 0.2s ease-in-out; }
+        a:hover { color: #3730a3; text-decoration: underline; }
+        
+        /* --- Main Layout (The "Card" Effect) --- */
+        .container {
+            display: flex;
+            max-width: 1000px;
+            margin: 60px auto; /* Pushed down a bit more from the top */
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 12px; /* Soft rounded corners */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Elegant, soft shadow */
+        }
+        
+        /* --- Sidebar (Profile) --- */
+        .sidebar {
+            width: 250px;
+            padding-right: 40px;
+            text-align: center;
+        }
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #f0f0f0;
+            margin-bottom: 20px;
+            border: 3px solid #f4f7f6; /* Adds a nice ring around your photo */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .sidebar h2 { margin: 0 0 5px 0; font-size: 1.6em; font-weight: 600; }
+        .sidebar p.title { color: #6c757d; font-size: 0.95em; margin-bottom: 20px; font-weight: 300; }
+        
+        .contact-info {
+            text-align: left;
+            font-size: 0.9em;
+            line-height: 2.2;
+            border-top: 1px solid #eaeaea;
+            padding-top: 15px;
+        }
+        
+        /* --- Main Content --- */
+        .main-content {
+            flex: 1;
+        }
+        
+        /* --- Navigation Menu --- */
+        .navbar {
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+            display: flex;
+            gap: 25px;
+        }
+        .navbar a { 
+            font-weight: 600; 
+            color: #6c757d; 
+            text-transform: uppercase; /* Makes the menu look more official */
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+        }
+        /* .navbar a:hover, .navbar a.active { 
+            color: #2c3e50; 
+            text-decoration: none; 
+            border-bottom: 3px solid #007bff; 
+            padding-bottom: 13px;
+        }
+         */
+         .navbar a:hover, .navbar a.active { 
+            color: #2c3e50; 
+            text-decoration: none; 
+            border-bottom: 3px solid #4f46e5; 
+            padding-bottom: 13px;
+        }
+        /* --- Text Sections --- */
+        h1 { border-bottom: 1px solid #eaeaea; padding-bottom: 10px; font-size: 2.2em; margin-top: 0; font-weight: 600; }
+        h2.section-title { margin-top: 45px; font-size: 1.5em; font-weight: 600; color: #2c3e50; }
+        
+        .item-list { margin-bottom: 20px; }
+        .item-title { font-weight: 600; font-size: 1.05em; }
+        .item-desc { color: #6c757d; font-size: 0.95em; margin-bottom: 5px; }
+
+        /* --- Publication Buttons & Hidden Sections --- */
+        .item-links {
+            margin-top: 8px;
+            margin-bottom: 12px;
+        }
+        .item-links button, .item-links .btn {
+            background: none;
+            border: 1px solid #4f46e5;
+            color: #4f46e5;
+            padding: 4px 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-right: 8px;
+            font-family: inherit;
+            transition: all 0.2s ease-in-out; 
+        }
+        
+        /* The Hover Magic */
+        .item-links button:hover, .item-links .btn:hover {
+            background: #4f46e5;
+            color: #fff;
+            transform: translateY(-2px); /* Makes the button "lift" up slightly */
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+        }
+        .hidden-section {
+            display: none; 
+            background-color: #f8f9fa;
+            border-left: 4px solid #4f46e5;
+            padding: 15px;
+            margin-top: 10px;
+            font-size: 0.95em;
+            border-radius: 0 6px 6px 0;
+            color: #495057;
+        }
+        .hidden-section pre {
+            margin: 0;
+            white-space: pre-wrap;
+            font-family: monospace;
+            background: #2b2b2b;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        /* --- Slides Preview Card --- */
+        .slide-card {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #eaeaea;
+            margin-bottom: 20px;
+            transition: box-shadow 0.2s ease;
+        }
+        .slide-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+        .slide-preview img {
+            width: 180px; /* Size of the preview thumbnail */
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .slide-info {
+            flex: 1;
+        }
+        .slide-info p {
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            color: #495057;
+        }
+
+        /* --- Mobile Adaptation --- */
+        @media (max-width: 768px) {
+            .container { flex-direction: column; margin: 20px; padding: 20px; }
+            .sidebar { width: 100%; padding-right: 0; border-bottom: 1px solid #eaeaea; padding-bottom: 20px; margin-bottom: 20px; }
+            .navbar { flex-wrap: wrap; justify-content: center;}
+            .slide-card { flex-direction: column; }
+            .slide-preview img { width: 100%; }
+        }
+    </style>
+    
+    <!-- <style>
         /* --- Base Styles --- */
         body {
             margin: 0;
@@ -116,7 +305,7 @@
             white-space: pre-wrap;
             font-family: monospace;
         }
-    </style>
+    </style> -->
 </head>
 <body>
 
@@ -189,12 +378,18 @@
             </div>
 
             <div id="bib-1" class="hidden-section">
-                <pre><code>@inproceedings{generali2026geometry,
-                    title={Geometry of Relaxed Fair Regression: A Unified Framework for Aware and Unaware Settings},
-                    author={Generali Lince, Marie and Divol, Vincent and Flamary, R{\'e}mi and Gaucher, Solenne and Loiseau, Patrick},
-                    booktitle={Advances in Neural Information Processing Systems},
-                    year={2026}
-                }</code></pre>
+                <pre><code>@unpublished{generalilince:hal-05625006,
+                    TITLE = {{Geometry of Relaxed Fair Regression: A Unified Framework for Aware and Unaware Settings}},
+                    AUTHOR = {Generali Lince, Marie and Divol, Vincent and Flamary, R{\'e}mi and Gaucher, Solenne and Loiseau, Patrick},
+                    URL = {https://hal.science/hal-05625006},
+                    NOTE = {working paper or preprint},
+                    YEAR = {2026},
+                    MONTH = May,
+                    KEYWORDS = {Algorithmic fairness ; risk-fairness trade-off ; regressions ; Demographic Parity ; least- squares ; optimal transport},
+                    PDF = {https://hal.science/hal-05625006v1/file/geometry_relaxed.pdf},
+                    HAL_ID = {hal-05625006},
+                    HAL_VERSION = {v1},
+                  }</code></pre>
             </div>
         </div>
 
@@ -203,12 +398,12 @@
             <div class="item-desc">M. Generali Lince, S. Gaucher, J-J. Vie, P. Loiseau.</div>
             
             <div class="item-links">
-                <button onclick="toggleSection('abs-1')">Abstract</button>
-                <button onclick="toggleSection('bib-1')">BibTeX</button>
-                <a href="flies/geometry_relaxed.pdf" target="_blank" class="btn">PDF</a>
+                <button onclick="toggleSection('abs-2')">Abstract</button>
+                <button onclick="toggleSection('bib-2')">BibTeX</button>
+                <a href="flies/placeholder.pdf" target="_blank" class="btn">PDF</a>
             </div>
 
-            <div id="abs-1" class="hidden-section">
+            <div id="abs-2" class="hidden-section">
                 <p><strong>Abstract:</strong> 
                     We consider the problem of learning a counterfactually fair regressor.
                     We adopt a causal uncertainty view in which counterfactual fairness is defined with resampled noise.
@@ -216,13 +411,13 @@
                     We begin by showing that counterfactual fairness is equivalent to satisfying demographic parity conditional on the latent variable.
                     This allows us to provide a closed-form expression of the optimal fair regressor via a barycentric quantile map.
                     In order to handle continuous latent variables, we propose a discretized post-processing method.
-                    Then, under mild regularity assumptions, we prove high-probability finite-sample fairness guarantees for our estimator, providing an unfairness decay at rate $\tilde O(n^{-1/3})$, and establishing a matching risk bound of order $\tilde O(n^{-1/3})$. We provide a matching lower bound on the excess risk of almost fair predictions.
+                    Then, under mild regularity assumptions, we prove high-probability finite-sample fairness guarantees for our estimator, providing an unfairness decay at rate \(\tilde O(n^{-1/3})\), and establishing a matching risk bound of order \(\tilde O(n^{-1/3})\). We provide a matching lower bound on the excess risk of almost fair predictions.
                     Finally, we extend our results to the setting of relaxed counterfactual fairness. 
                     We validate our approach on real-world and synthetic data. 
                 </p>
             </div>
 
-            <div id="bib-1" class="hidden-section">
+            <div id="bib-2" class="hidden-section">
                 <pre><code>
 
                 </code></pre>
@@ -231,17 +426,26 @@
 
         <h2 id="slides" class="section-title">Slides</h2>
 
-        <div class="item-list">
-            <div class="item-title">Introduction à la fairness algorithmique</div>
-            <div class="item-desc"> <em>Séminaire enjeux éthiques, societaux et environnementaux. </em>
-            <a href="flies/Introduction à la fairness algorithmique-2.pdf" target="_blank">View PDF</a>.</div>
+        <div class="slide-card">
+            <div class="slide-preview">
+                <a href="flies/Introduction à la fairness algorithmique-2.pdf" target="_blank">
+                    <img src="flies/slide_1.png" alt="Preview of Fairness Slides">
+                </a>
+            </div>
+            
+            <div class="slide-info">
+                <div class="item-title">Introduction à la fairness algorithmique (2026)</div>
+                <div class="item-desc"><em>Séminaire enjeux éthiques, sociétaux et environnementaux.</em></div>
+                
+                <p>You are new to algorithmic fairness? This is an accessible introduction to the topic. Follow the story of "Hugo the Algorithm" to understand where historical and statistical biases come from, and why algorithms are never truly neutral.</p>
+                
+                <div class="item-links">
+                    <a href="flies/Introduction à la fairness algorithmique-2.pdf" target="_blank" class="btn">View Slides (PDF)</a>
+                </div>
+            </div>
         </div>
 
-        
-    </div>
-</div>
-
-<script>
+    </div> </div> <script>
     function toggleSection(id) {
         var element = document.getElementById(id);
         if (element.style.display === "block") {
