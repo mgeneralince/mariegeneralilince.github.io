@@ -79,13 +79,48 @@
             .sidebar { width: 100%; padding-right: 0; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 20px; }
             .navbar { flex-wrap: wrap; justify-content: center;}
         }
+
+        /* --- Publication Buttons & Hidden Sections --- */
+        .item-links {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        .item-links button, .item-links .btn {
+            background: none;
+            border: 1px solid #007bff;
+            color: #007bff;
+            padding: 3px 8px;
+            font-size: 0.85em;
+            cursor: pointer;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-right: 5px;
+            font-family: inherit;
+        }
+        .item-links button:hover, .item-links .btn:hover {
+            background: #007bff;
+            color: #fff;
+        }
+        .hidden-section {
+            display: none; /* Hidden by default */
+            background-color: #f9f9f9;
+            border-left: 3px solid #007bff;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        .hidden-section pre {
+            margin: 0;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="sidebar">
-        <img src="photo.jpg" alt="Marie Generali Lince" class="profile-pic">
+        <img src="flies/photo.jpg" alt="Marie Generali Lince" class="profile-pic">
         
         <h2>Marie Generali Lince</h2>
         <!-- <p class="title">ENSAE / CREST / INRIA / IPP<br></p> -->
@@ -103,7 +138,7 @@
             <a href="#publications">Publications</a>
             <a href="#teaching">Teaching</a>
             <a href="#slides">Slides</a>
-            <a href="CV_MG_EN-5.pdf" target="_blank">CV</a>
+            <a href="flies/CV_MG_EN-5.pdf" target="_blank">CV</a>
         </div>
 
         <h1 id="about">About me</h1>
@@ -120,16 +155,76 @@
 
         <h2 id="publications" class="section-title">Publications</h2>
         
+        <!-- <div class="item-list">
+            <div class="item-title">Geometry of Relaxed Fair Regression: A Unified Framework for Aware and Unaware Settings</div>
+            <div class="item-desc">M. Generali Lince, V. Divol, R. Flamary, S. Gaucher, P. Loiseau. <em></em>. <a href="flies/geometry_relaxed.pdf" target="_blank">View PDF</a>.</div>
+            <p>This paper proposes a unified framework for relaxed fair regression using optimal transport. It provides explicit solutions for both aware and unaware settings, along with an efficient post-processing algorithm.</p>
+        </div> -->
         <div class="item-list">
             <div class="item-title">Geometry of Relaxed Fair Regression: A Unified Framework for Aware and Unaware Settings</div>
-            <div class="item-desc">M. Generali Lince, V. Divol, R. Flamary, S. Gaucher, P. Loiseau. <em></em>. <a href="neurips_2026.pdf" target="_blank">View PDF</a>.</div>
-            <p>This paper proposes a unified framework for relaxed fair regression using optimal transport. It provides explicit solutions for both aware and unaware settings, along with an efficient post-processing algorithm.</p>
+            <div class="item-desc">M. Generali Lince, V. Divol, R. Flamary, S. Gaucher, P. Loiseau.</div>
+            
+            <div class="item-links">
+                <button onclick="toggleSection('abs-1')">Abstract</button>
+                <button onclick="toggleSection('bib-1')">BibTeX</button>
+                <a href="flies/geometry_relaxed.pdf" target="_blank" class="btn">PDF</a>
+            </div>
+
+            <div id="abs-1" class="hidden-section">
+                <p><strong>Abstract:</strong> Fairness-accuracy trade-offs are a central concern in the deployment of fairness-aware
+                    machine learning methods. When sensitive attributes are unavailable at inference time–the
+                    so called unawareness setting, principled methods for obtaining accurate predictions under
+                    relaxed fairness constraints are largely missing. In this work, we address this gap by
+                    formulating regression under a demographic parity penalty as an optimal transport problem.
+                    Our framework unifies both the aware and unaware settings and characterizes optimal
+                    prediction functions via optimal transport maps, under both squared Wasserstein-2 and Total
+                    Variation penalties. These results reveal that the choice of penalty reflects fundamentally
+                    different fairness philosophies: the Wasserstein penalty induces a smooth, population-wide
+                    compromise, while Total Variation enforces exact parity for a subset of individuals. Building
+                    on these theoretical characterizations, we propose an algorithm that is simple to implement,
+                    computationally efficient, and consistently matches or outperforms state-of-the-art baselines
+                    on real-world benchmarks.</p>
+            </div>
+
+            <div id="bib-1" class="hidden-section">
+                <pre><code>@inproceedings{generali2026geometry,
+                    title={Geometry of Relaxed Fair Regression: A Unified Framework for Aware and Unaware Settings},
+                    author={Generali Lince, Marie and Divol, Vincent and Flamary, R{\'e}mi and Gaucher, Solenne and Loiseau, Patrick},
+                    booktitle={Advances in Neural Information Processing Systems},
+                    year={2026}
+                }</code></pre>
+            </div>
         </div>
 
         <div class="item-list">
             <div class="item-title">Counterfactually Fair Regression via Optimal Transport</div>
-            <div class="item-desc">M. Generali Lince, S. Gaucher, J.-J. Vie, P. Loiseau. <a href="geometry_relaxed.pdf" target="_blank">View PDF</a>.</div>
-            <p>This work demonstrates that counterfactual fairness (CF) is equivalent to conditional demographic parity. It introduces a post-processing method with precise statistical bounds to control the accuracy-fairness trade-off.</p>
+            <div class="item-desc">M. Generali Lince, S. Gaucher, J-J. Vie, P. Loiseau.</div>
+            
+            <div class="item-links">
+                <button onclick="toggleSection('abs-1')">Abstract</button>
+                <button onclick="toggleSection('bib-1')">BibTeX</button>
+                <a href="flies/geometry_relaxed.pdf" target="_blank" class="btn">PDF</a>
+            </div>
+
+            <div id="abs-1" class="hidden-section">
+                <p><strong>Abstract:</strong> 
+                    We consider the problem of learning a counterfactually fair regressor.
+                    We adopt a causal uncertainty view in which counterfactual fairness is defined with resampled noise.
+                    We focus on obtaining theoretical fairness guarantees for a new post-processing estimator.
+                    We begin by showing that counterfactual fairness is equivalent to satisfying demographic parity conditional on the latent variable.
+                    This allows us to provide a closed-form expression of the optimal fair regressor via a barycentric quantile map.
+                    In order to handle continuous latent variables, we propose a discretized post-processing method.
+                    Then, under mild regularity assumptions, we prove high-probability finite-sample fairness guarantees for our estimator, providing an unfairness decay at rate $\tilde O(n^{-1/3})$, and establishing a matching risk bound of order $\tilde O(n^{-1/3})$. We provide a matching lower bound on the excess risk of almost fair predictions.
+                    Finally, we extend our results to the setting of relaxed counterfactual fairness. 
+                    We validate our approach on real-world and synthetic data. 
+                </p>
+            </div>
+
+            <div id="bib-1" class="hidden-section">
+                <pre><code>
+
+                </code></pre>
+            </div>
         </div>
 
         <h2 id="slides" class="section-title">Slides</h2>
@@ -137,12 +232,23 @@
         <div class="item-list">
             <div class="item-title">Introduction à la fairness algorithmique</div>
             <div class="item-desc"> <em>Séminaire enjeux éthiques, societaux et environnementaux. </em>
-            <a href="geometry_relaxed.pdf" target="_blank">View PDF</a>.</div>
+            <a href="flies/Introduction à la fairness algorithmique-2.pdf" target="_blank">View PDF</a>.</div>
         </div>
 
         
     </div>
 </div>
+
+<script>
+    function toggleSection(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "block") {
+            element.style.display = "none";
+        } else {
+            element.style.display = "block";
+        }
+    }
+</script>
 
 </body>
 </html>
