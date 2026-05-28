@@ -144,7 +144,7 @@
             border-radius: 0 6px 6px 0;
             color: #495057;
         }
-        .hidden-section pre {
+        /* .hidden-section pre {
             margin: 0;
             white-space: pre-wrap;
             font-family: monospace;
@@ -152,6 +152,18 @@
             color: #f8f8f2;
             padding: 10px;
             border-radius: 4px;
+        } */
+        .hidden-section pre {
+            margin: 0;
+            white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            background: #f1f3f5; 
+            color: #333333;      
+            padding: 12px;
+            border: 1px solid #e9ecef; 
+            border-radius: 6px;
+            overflow-x: auto;
         }
 
         /* --- Slides Preview Card --- */
@@ -328,7 +340,7 @@
             <a href="#about" class="active">About me</a>
             <a href="#publications">Publications</a>
             <a href="#teaching">Teaching</a>
-            <a href="#slides">Slides</a>
+            <a href="#slides">Talks</a>
             <a href="flies/CV_MG_EN-5.pdf" target="_blank">CV</a>
         </div>
 
@@ -359,6 +371,7 @@
                 <button onclick="toggleSection('abs-1')">Abstract</button>
                 <button onclick="toggleSection('bib-1')">BibTeX</button>
                 <a href="flies/geometry_relaxed.pdf" target="_blank" class="btn">PDF</a>
+                <a href="https://arxiv.org/abs/2605.28233" target="_blank" class="btn">arXiv</a>
             </div>
 
             <div id="abs-1" class="hidden-section">
@@ -379,16 +392,16 @@
 
             <div id="bib-1" class="hidden-section">
                 <pre><code>@unpublished{generalilince:hal-05625006,
-                    TITLE = {{Geometry of Relaxed Fair Regression: A Unified Framework for Aware and Unaware Settings}},
-                    AUTHOR = {Generali Lince, Marie and Divol, Vincent and Flamary, R{\'e}mi and Gaucher, Solenne and Loiseau, Patrick},
-                    URL = {https://hal.science/hal-05625006},
-                    NOTE = {working paper or preprint},
-                    YEAR = {2026},
-                    MONTH = May,
-                    KEYWORDS = {Algorithmic fairness ; risk-fairness trade-off ; regressions ; Demographic Parity ; least- squares ; optimal transport},
-                    PDF = {https://hal.science/hal-05625006v1/file/geometry_relaxed.pdf},
-                    HAL_ID = {hal-05625006},
-                    HAL_VERSION = {v1},
+TITLE = {{Geometry of Relaxed Fair Regression: A Unified Framework for Aware and Unaware Settings}},
+AUTHOR = {Generali Lince, Marie and Divol, Vincent and Flamary, R{\'e}mi and Gaucher, Solenne and Loiseau, Patrick},
+URL = {https://hal.science/hal-05625006},
+NOTE = {working paper or preprint},
+YEAR = {2026},
+MONTH = May,
+KEYWORDS = {Algorithmic fairness ; risk-fairness trade-off ; regressions ; Demographic Parity ; least- squares ; optimal transport},
+PDF = {https://hal.science/hal-05625006v1/file/geometry_relaxed.pdf},
+HAL_ID = {hal-05625006},
+HAL_VERSION = {v1},
                   }</code></pre>
             </div>
         </div>
@@ -401,6 +414,7 @@
                 <button onclick="toggleSection('abs-2')">Abstract</button>
                 <button onclick="toggleSection('bib-2')">BibTeX</button>
                 <a href="flies/placeholder.pdf" target="_blank" class="btn">PDF</a>
+                <a href="https://arxiv.org/abs/2605.28251" target="_blank" class="btn">arXiv</a>
             </div>
 
             <div id="abs-2" class="hidden-section">
@@ -418,8 +432,15 @@
             </div>
 
             <div id="bib-2" class="hidden-section">
-                <pre><code>
-
+                <pre><code>@misc{lince2026counterfactuallyfairregressionoptimal,
+                        title={Counterfactually Fair Regression via Optimal Transport}, 
+                        author={M. Generali Lince and S. Gaucher and J-J. Vie and P. Loiseau},
+                        year={2026},
+                        eprint={2605.28251},
+                        archivePrefix={arXiv},
+                        primaryClass={stat.ML},
+                        url={https://arxiv.org/abs/2605.28251}, 
+                  }
                 </code></pre>
             </div>
         </div>
@@ -448,7 +469,7 @@
         </div>
 
 
-        <h2 id="slides" class="section-title">Slides</h2>
+        <h2 id="slides" class="section-title">Talks</h2>
 
         <div class="slide-card">
             <div class="slide-preview">
